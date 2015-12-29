@@ -1,11 +1,8 @@
 package com.nvg.anibis.screens.nativeapp.pagefactory;
 
-import static com.nvg.anibis.support.Helpers.waitMsec;
-
 import com.nvg.anibis.screens.nativeapp.pagefactory.HomePage;
 import com.nvg.anibis.screens.nativeapp.pagefactory.LoginPage;
 import com.nvg.anibis.utils.CommonUtils;
-
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;

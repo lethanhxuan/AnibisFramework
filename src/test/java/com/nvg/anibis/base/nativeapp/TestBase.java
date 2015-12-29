@@ -51,7 +51,7 @@ public class TestBase {
 		System.out.println("\n[INFO] Running test for the app at: "
 				+ CommonUtils.getAppPath() + "\n");
 		driver = CommonUtils.getDriver (capabilities);
-		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		
 		//Try to pass initial Screen
 		try {

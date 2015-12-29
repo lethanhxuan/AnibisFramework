@@ -4,10 +4,17 @@
 <!--Nativeapp test list-->
 
 
-<test name="Account Test">
+<!--<test name="Account Test">
     <classes>
-        <class name="com.nvg.anibis.testcases.nativeapp.AccountTest" ></class>  
+        <class name="com.nvg.anibis.testcases.nativeapp.SearchTest" ></class>  
+    </classes>
+</test>-->
+
+<test name="Search Test">
+    <classes>
+        <class name="com.nvg.anibis.testcases.nativeapp.SearchTest" ></class>  
     </classes>
 </test>
+
 
 </suite>

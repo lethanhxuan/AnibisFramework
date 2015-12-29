@@ -50,7 +50,7 @@ public class LoginPage extends ScreenBase{
 	@AndroidFindBy(id = "vgListings")
 	@iOSFindBy(name = "Abmelden")
 	@WithTimeout(time = 30, unit = TimeUnit.SECONDS)
-	private MobileElement loggedInIdentifier; 
+	private MobileElement logOutBtn; 
 	
 
 	/**
@@ -74,7 +74,7 @@ public class LoginPage extends ScreenBase{
 	private LoginPage waitForLogin() {
 		waitMsec(3000);
 		try {
-			loggedInIdentifier.isDisplayed();
+			logOutBtn.isDisplayed();
 			Helpers.waitSec(2);
 			return this;
 		} catch (NoSuchElementException e) {

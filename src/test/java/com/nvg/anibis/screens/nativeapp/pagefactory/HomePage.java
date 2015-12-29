@@ -1,20 +1,14 @@
 package com.nvg.anibis.screens.nativeapp.pagefactory;
 
-import java.net.MalformedURLException;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
-import org.openqa.selenium.support.PageFactory;
 import com.nvg.anibis.base.nativeapp.ScreenBase;
-import com.nvg.anibis.support.Helpers;
 import com.nvg.anibis.utils.CommonUtils;
-
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
-import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import io.appium.java_client.pagefactory.iOSFindBy;
-import static com.nvg.anibis.support.Helpers.timeOut;
-import static com.nvg.anibis.support.Helpers.waitForPopUp;
+import io.appium.java_client.pagefactory.iOSFindBys;
+
 import static com.nvg.anibis.support.Helpers.waitMsec;
 
 public class HomePage extends ScreenBase {
@@ -30,28 +24,41 @@ public class HomePage extends ScreenBase {
 	/**
 	 * Find elements *
 	 */
+	// The list of 3 tabs on Home page (Search, Insertion, My Abinis)
+	@AndroidFindBy(className = "android.support.v7.app.ActionBar$Tab")
+	@iOSFindBys({ 
+		@iOSFindBy(xpath = "//UIAApplication[1]/UIAWindow[1]/UIATabBar[1]"),
+		@iOSFindBy(className = "UIAButton")
+		})
+	private List<MobileElement> HomeTabs;
 	
-	// The list of tabs on Home page
-		@AndroidFindBy(className = "android.support.v7.app.ActionBar$Tab")
-		@iOSFindBy(name = "My Anibis")
-		private List<MobileElement> HomeTabs;
-		
+	/**
+	 * Go to Search tab*
+	 */
+	public SearchPage gotoSearchPage() {
+		HomeTabs.get(0).click();
+		waitMsec(200);
+		return new SearchPage(driver, platform);
+	}
+	
+	/**
+	 * Go to Insertion tab*
+	 */
+	public SearchPage gotoInsertionPage() {
+		HomeTabs.get(1).click();
+		waitMsec(200);
+		return new SearchPage(driver, platform);
+	}
 	
 	/**
 	 * Go to My Anibis tab *
-	 */	 
-		public MyAnibisPage goToMyAnibisPage(){
-			if (platform.toLowerCase().equals("android")) 
-			{
-				System.out.println("Trying to tap on My Anibis tab");
-				HomeTabs.get(2).click();	
-			} 
-			else 
-			{
-				HomeTabs.get(0).click();
-			}
-			return new MyAnibisPage(driver,CommonUtils.platform);
-			
-		}
+	 */
+	public MyAnibisPage goToMyAnibisPage() {
+		HomeTabs.get(2).click();
+		waitMsec(200);
+		return new MyAnibisPage(driver, CommonUtils.platform);
+	}
+
+
 
 }

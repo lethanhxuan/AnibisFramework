@@ -11,9 +11,10 @@ import com.nvg.anibis.utils.CommonUtils;
 public class AccountTest extends TestBase {
 	
 
-	
+	/**
+	 * Go to LogIn Screen before doing any test here*
+	 */
 	@BeforeTest
-
 	public void goToLogInScreen() throws InterruptedException{
 		HomePage hp = new HomePage(driver, CommonUtils.platform);
 			hp.goToMyAnibisPage().openLoginPage();
