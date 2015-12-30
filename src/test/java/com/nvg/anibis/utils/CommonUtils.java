@@ -43,6 +43,7 @@ public class CommonUtils {
 	public static String APPIUM_SERVER_PORT;
 
 	public static String platform;
+	public static String API_SERVER_INDEX;
 	public static URL url;
 	public static boolean realDevice = System.getProperty("real") != null;
 	private static boolean jenkins = System.getProperty("jenkins") != null;
@@ -86,6 +87,7 @@ public class CommonUtils {
 		NEW_COMMAND_TIMEOUT = prop.getProperty("new.command.timeout");
 		DEVICE_READY_TIMEOUT = prop.getProperty("device.ready.timeout");
 		APPIUM_SERVER_PORT=  prop.getProperty("appium.server.port");
+		API_SERVER_INDEX=  prop.getProperty("api.server.index");
 		
 		//load login info
 		IOS_LOGIN_USER= prop.getProperty("ios.login.user");
@@ -200,11 +202,3 @@ public class CommonUtils {
 		}
 
 	}
-	
-	
-	
-	
-	
-
-
-

@@ -1,5 +1,7 @@
 package com.nvg.anibis.base.nativeapp;
 
+import static com.nvg.anibis.support.Helpers.waitMsec;
+
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
@@ -12,6 +14,8 @@ import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 
 import com.nvg.anibis.support.Helpers;
+import com.nvg.anibis.screens.nativeapp.pagefactory.HomePage;
+import com.nvg.anibis.screens.nativeapp.pagefactory.SearchPage;
 import com.nvg.anibis.support.Condition;
 import com.nvg.anibis.support.TextScanner;
 import com.nvg.anibis.utils.AppiumServer;
@@ -65,7 +69,10 @@ public class TestBase {
 			driver.findElementByName("Deutsch").click();
 		} catch (NoSuchElementException e) {}
 
-
+		// Define API Server to test
+		HomePage homePage = new HomePage(driver, CommonUtils.platform);
+		homePage.gotoSearchPage().goToSettingPage().chooseServer(Integer.parseInt(CommonUtils.API_SERVER_INDEX)).backtoSearch();
+		waitMsec(1000);
 		}
 	
 	

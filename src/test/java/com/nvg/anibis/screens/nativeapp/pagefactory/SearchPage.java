@@ -59,7 +59,7 @@ public class SearchPage extends ScreenBase {
 	private MobileElement AllCategoryBtn;
 
 	// Define the Setting button
-	@iOSFindBy(name = "Settings")
+	@iOSFindBy(xpath= "//UIAApplication[1]/UIAWindow[1]/UIATableView[1]/UIATableCell[6]/UIAStaticText[1]")
 	@AndroidFindBy(id = "llSetting")
 	private MobileElement settingBtn;
 
@@ -80,6 +80,19 @@ public class SearchPage extends ScreenBase {
 		}
 
 		return new SearchResult(driver, platform);
+	}
+	/**
+	 * Enter a text for searching and click Search button *
+	 */
+	
+	public SettingsPage goToSettingPage() {
+	    if (platform.equals("android")) androidScrollToText("Setting");
+
+	    settingBtn.click();
+		waitMsec(500);
+
+		return new SettingsPage(driver, platform);
+	
 	}
 
 }
