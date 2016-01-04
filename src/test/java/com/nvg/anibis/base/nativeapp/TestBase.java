@@ -4,10 +4,15 @@ import static com.nvg.anibis.support.Helpers.waitMsec;
 
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
+import java.util.function.Consumer;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.remote.Augmenter;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
@@ -36,6 +41,34 @@ public class TestBase {
 	protected static TouchAction action;
 	public static Condition deviceCondition;
 	DesiredCapabilities capabilities = new DesiredCapabilities();
+	
+	
+	public void executeInTryCatch(Consumer<AppiumDriver<MobileElement>> action) {
+		try {
+			action.accept(driver);
+
+		} catch (Exception e) {
+			if (driver != null) {
+				
+				WebDriver augmentedDriver = new Augmenter().augment(driver);
+				if (augmentedDriver instanceof TakesScreenshot) {
+					capturePage = ((TakesScreenshot) augmentedDriver)
+							.getScreenshotAs(OutputType.BYTES);
+				}
+			} else {
+				System.out
+						.println("WARNING: driver killed before taking screenshot.");
+			}
+		//	checker.addError(e);
+		} finally {
+			testNo++;
+		}
+	}
+
+	
+	
+	
+	
 	
 	@BeforeSuite
 	public void setUp() throws IOException, InterruptedException{

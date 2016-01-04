@@ -64,14 +64,15 @@
 
 	
   
+		
   
-  
-  
-  
-  
-  
-   <url>http://maven.apache.org</url>
+ 
 	<dependencies>
+	<dependency>
+			<groupId>com.genymotion.api</groupId>
+			<artifactId>genymotion-api</artifactId>
+			<version>1.0.2</version>
+		</dependency>
 		<dependency>
 			<groupId>com.google.android</groupId>
 			<artifactId>android</artifactId>
@@ -160,6 +161,11 @@
 			<artifactId>swagger-annotations</artifactId>
 			<version>1.5.4</version>
 		</dependency>
+				<dependency>
+			<groupId>com.sun.jersey</groupId>
+			<artifactId>jersey-client</artifactId>
+			<version>1.19</version>
+		</dependency>
 		<dependency>
 			<groupId>com.sun.jersey.contribs</groupId>
 			<artifactId>jersey-multipart</artifactId>
@@ -245,13 +251,14 @@
 				<enabled>true</enabled>
 			</snapshots>
 		</repository>
+		
+		<repository>
+			<id>genymotion</id>
+			<name>Genymotion repo</name>
+			<url>http://api.genymotion.com/repositories/releases/</url>
+		</repository>
+		
 	</repositories>
-  
-  
-
-		
-		
-  
   
   
 </project>

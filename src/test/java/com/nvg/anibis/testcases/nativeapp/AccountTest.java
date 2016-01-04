@@ -25,8 +25,9 @@ public class AccountTest extends TestBase {
 	 */
 	@Test
 	public void validLogInTest() throws InterruptedException{
+		executeInTryCatch(driver->{
 		LoginPage lip = new LoginPage(driver, CommonUtils.platform);
-		 lip.validLogin();	 
+		 lip.validLogin();});	 
 	}
 
 }

@@ -6,16 +6,4 @@
       <class name="com.nvg.anibis.testcases.nativeapp.AccountTest"/>
     </classes>
   </test> <!-- Account Test -->
-  <test name="Account Test(failed)">
-    <classes>
-      <class name="com.nvg.anibis.testcases.nativeapp.AccountTest">
-        <methods>
-          <include name="setUp"/>
-          <include name="validLogInTest"/>
-          <include name="tearDown"/>
-          <include name="goToLogInScreen"/>
-        </methods>
-      </class> <!-- com.nvg.anibis.testcases.nativeapp.AccountTest -->
-    </classes>
-  </test> <!-- Account Test(failed) -->
 </suite> <!-- Failed suite [Anibis TestNG] -->
