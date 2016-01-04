@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Anibis TestNG]">
+  <test name="Account Test">
+    <classes>
+      <class name="com.nvg.anibis.testcases.nativeapp.AccountTest"/>
+    </classes>
+  </test> <!-- Account Test -->
+  <test name="Account Test(failed)">
+    <classes>
+      <class name="com.nvg.anibis.testcases.nativeapp.AccountTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="validLogInTest"/>
+          <include name="tearDown"/>
+          <include name="goToLogInScreen"/>
+        </methods>
+      </class> <!-- com.nvg.anibis.testcases.nativeapp.AccountTest -->
+    </classes>
+  </test> <!-- Account Test(failed) -->
+</suite> <!-- Failed suite [Anibis TestNG] -->

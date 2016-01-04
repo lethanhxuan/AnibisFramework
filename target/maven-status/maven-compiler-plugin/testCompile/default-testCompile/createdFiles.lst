@@ -1,0 +1,8 @@
+com/nvg/anibis/utils/AppiumServer.class
+com/nvg/anibis/testcases/nativeapp/HomeScreenTest.class
+com/nvg/anibis/support/Helpers.class
+com/nvg/anibis/support/Helpers$1.class
+com/nvg/anibis/support/TextScanner.class
+com/nvg/anibis/utils/CommonUtils.class
+com/nvg/anibis/testcases/nativeapp/InitialScreenTest.class
+com/nvg/anibis/support/Condition.class

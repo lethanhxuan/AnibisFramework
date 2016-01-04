@@ -1,0 +1,20 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Anibis TestNG">
+
+<!--Nativeapp test list-->
+
+
+<test name="Account Test">
+    <classes>
+        <class name="com.nvg.anibis.testcases.nativeapp.AccountTest" ></class>  
+    </classes>
+</test>
+
+<!--<test name="Search Test">
+    <classes>
+        <class name="com.nvg.anibis.testcases.nativeapp.SearchTest" ></class>  
+    </classes>
+</test>-->
+
+
+</suite>
